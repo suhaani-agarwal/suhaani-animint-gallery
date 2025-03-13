@@ -1,0 +1,68 @@
+---
+title: "Suhaani-Animint-Gallery"
+author: "SuhaaniAgarwal"
+date: "2025-03-13"
+output: html_document
+---
+
+```{r, echo=FALSE}
+library(kableExtra)
+
+# # Install required packages if not already installed
+# if (!require(kableExtra)) install.packages("kableExtra")
+# if (!require(rmarkdown)) install.packages("rmarkdown")
+# if (!require(animint2)) install.packages("animint2")
+# if (!require(knitr)) install.packages("knitr")
+# if (!require(DT)) install.packages("DT")
+
+library(kableExtra)
+library(rmarkdown)
+library(animint2)
+library(knitr)
+library(DT)
+
+dt <- read.csv('meta.csv')
+no_of_ani <- dim(dt)[1]
+image_links <- numeric(no_of_ani)
+for(i in 1:dim(dt)[1]){
+  image_links[i] <- sprintf("%s%s%s","https://raw.githubusercontent.com/",dt$viz_owner_repo[i],"/gh-pages/Capture.png")
+}
+
+Creator <- strsplit(dt$viz_owner_repo,split="/")
+CreatorName <- numeric(length(Creator))
+viz.title <- numeric(length(Creator))
+for(i in 1:length(Creator)){
+  CreatorName[i] <-Creator[[i]][1]
+  viz.title[i] <- Creator[[i]][2]
+}
+
+Visualization_Link <- sprintf("%s%s",viz.title,".viz")
+
+image_df <- data.frame(Image="")
+
+Source <- paste0("<a href=", dt$source, ">", dt$title, "</a>")
+
+viz.link <- sprintf("%s%s%s%s","https://",CreatorName,".github.io/",viz.title)
+
+gh_page_repo_link <- sprintf("%s%s%s","https://github.com/",dt$viz_owner_repo,"/tree/gh-pages")
+gh_page_repo <- paste0("<a href=", gh_page_repo_link, ">", dt$commit.POSIXct, "</a>")
+
+Visualization_Link <- paste0("<a href=", viz.link, ">", Visualization_Link, "</a>")
+
+
+full_data <- cbind(image_df,Visualization_Link , dt,Source,gh_page_repo,CreatorName)
+full_data <- full_data[,c(1,2,8,9)]
+
+#Creating table
+kable(full_data, format = "html",escape=FALSE) %>%
+  kable_styling(full_width = FALSE) %>%
+  column_spec(1, image = image_links)
+```
+[Download the above table](meta.csv)
+
+# Visualisation with missing Meta-Data
+```{r,eval=FALSE,echo=FALSE}
+#Table can be added when we have entries in error.csv
+```
+# Source Code
+* [Repository of this gallery](https://github.com/Vatsal-Rajput/Vatsal-Animint-Gallery)
