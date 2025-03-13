@@ -60,9 +60,8 @@ kable(full_data, format = "html",escape=FALSE) %>%
 ```
 [Download the above table](meta.csv)
 
-# Visualisation with missing Meta-Data
 ```{r,eval=FALSE,echo=FALSE}
 #Table can be added when we have entries in error.csv
 ```
 # Source Code
-* [Repository of this gallery](https://github.com/Vatsal-Rajput/Vatsal-Animint-Gallery)
+* [Repository of this gallery](https://github.com/suhaani-agarwal/suhaani-animint-gallery)

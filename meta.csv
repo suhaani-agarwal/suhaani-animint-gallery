@@ -1,3 +1,4 @@
 add.POSIXct,viz_owner_repo,commit.POSIXct,source,title
-2023-10-28T05:42:48.192757Z,suhaani-agarwal/MovingWindow,2023-10-27T23:58:42Z,https://github.com/Vatsal-Rajput/Animint2Test/blob/main/BrownianMotion.R,MovingWindow
-2024-03-17T19:39:03.965794Z,suhaani-agarwal/CentralLimitTheorem,2024-03-17T10:56:00Z,https://github.com/Vatsal-Rajput/Animint2_WorldBank/tree/main,CentralLimitTheorem
+2025-03-14T05:42:48.192757Z,suhaani-agarwal/newton_squareroot_animint,2025-03-14T10:50:00Z,https://github.com/suhaani-agarwal/r/tree/main/medium_test_newtons_method_code/newtons_root.r,newton_raphson_squareroot
+2025-03-14T19:39:03.965794Z,suhaani-agarwal/bisection_method_animint,2025-03-14T10:56:00Z,https://github.com/suhaani-agarwal/r/tree/main/bisection_method,bisection_method
+2025-03-14T19:39:03.965794Z,suhaani-agarwal/central_limit_animint,2025-03-14T11:56:00Z,https://github.com/suhaani-agarwal/r/tree/main/medium_test_centrallimit_code,central_limit_theorem
