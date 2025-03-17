@@ -6,7 +6,6 @@ output: html_document
 ---
 
 ```{r, echo=FALSE}
-library(kableExtra)
 
 # # Install required packages if not already installed
 # if (!require(kableExtra)) install.packages("kableExtra")
@@ -15,11 +14,13 @@ library(kableExtra)
 # if (!require(knitr)) install.packages("knitr")
 # if (!require(DT)) install.packages("DT")
 
-library(kableExtra)
-library(rmarkdown)
-library(animint2)
-library(knitr)
-library(DT)
+suppressPackageStartupMessages({
+  library(kableExtra)
+  library(rmarkdown)
+  library(animint2)
+  library(knitr)
+  library(DT)
+})
 
 dt <- read.csv('meta.csv')
 no_of_ani <- dim(dt)[1]
